@@ -1,0 +1,149 @@
+:root {
+  --seconds: "----";
+  --minutes: "----";
+  --hours: "----";
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  background: radial-gradient(
+    circle,
+    rgba(156, 156, 156, 1) 0%,
+    rgba(0, 0, 0, 0.87) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+h1 {
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+#data {
+  margin-top: -20px;
+  opacity: 0.8;
+}
+
+.clock {
+  background: radial-gradient(circle, #ffffff 60%, #e6e6e6 100%);
+  position: relative;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 8px solid #111;
+  margin: 60px;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.3);
+
+  animation: clockPopUp 1s cubic-bezier(0.25, 1.4, 0.5, 1) forwards;
+}
+
+.seconds-clock-hand {
+  position: absolute;
+  width: 2px;
+  height: 150px;
+  background: linear-gradient(to top, red, darkred);
+  bottom: 50%;
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: rotate(var(--seconds));
+}
+
+.minutes-clock-hand {
+  position: absolute;
+  width: 4px;
+  height: 130px;
+  background: linear-gradient(to top, #222, #000);
+  bottom: 50%;
+  border-radius: 4px;
+  transform-origin: bottom center;
+  transform: rotate(var(--minutes));
+}
+
+.hours-clock-hand {
+  position: absolute;
+  width: 6px;
+  height: 90px;
+  background: linear-gradient(to top, #222, #000);
+  bottom: 50%;
+  border-radius: 6px;
+  transform-origin: bottom center;
+  transform: rotate(var(--hours));
+}
+
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.mark {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.mark-12 {
+  top: 10px;
+  left: 50%;
+}
+
+.mark-3 {
+  right: 10px;
+  top: 50%;
+}
+
+.mark-6 {
+  bottom: 10px;
+  left: 50%;
+}
+
+.mark-9 {
+  left: 10px;
+  top: 50%;
+}
+
+footer {
+  margin-top: 40px;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s;
+}
+
+a:hover {
+  border-bottom: 1px solid white;
+}
+
+@keyframes clockPopUp {
+  0% {
+    transform: scale(0.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
